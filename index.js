@@ -30,6 +30,22 @@ app.post('/items', (req, res) => {
     res.status(201).json(newItem);
 })
 
+app.put('/items/:id', (req, res) => {
+    const id = Number(req.params.id);
+    const item = items.find(f => f.id === id);
+
+    if (!item) {
+        return res.status(404).json({ error: 'Item not found'})
+    }
+
+    if (!req.body.name) {
+        return res.status(400).json({ error: 'Name is required'})
+    }
+
+    item.name = req.body.name;
+    res.json(item);
+});
+
 app.listen(PORT, () => {
     console.log(`Running server on http://localhost:${PORT}`);
    });
