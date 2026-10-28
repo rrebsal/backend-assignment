@@ -21,6 +21,15 @@ app.get('/items/:id', (req, res) => {
    res.json(item);
 });
 
+app.post('/items', (req, res) => {
+    const newItem =  {
+        id: items.length + 1,
+        name: req.body.name
+    };
+    items.push(newItem);
+    res.status(201).json(newItem);
+})
+
 app.listen(PORT, () => {
     console.log(`Running server on http://localhost:${PORT}`);
    });
