@@ -1,0 +1,1 @@
+The implementation went smoothly, although I had some issues working on POSTMAN, as I'm still very new to that whole app. As I was making the assignment, I realized Express wasn't allowed, so I had to do the assignment pretty much all from scratch again.
